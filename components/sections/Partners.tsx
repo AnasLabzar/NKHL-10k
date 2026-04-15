@@ -26,7 +26,7 @@ export default function Partners() {
           <span className="block text-[10px] font-sans font-semibold uppercase tracking-[0.22em] text-gray-600 mb-4">
             Official Partners & Sponsors
           </span>
-          <h2 className="font-display text-5xl md:text-6xl text-white tracking-tight">
+          <h2 className="font-display text-5xl md:text-6xl text-white tracking-tighter uppercase leading-[0.9]">
             Backed by the Best
           </h2>
         </SectionReveal>
@@ -48,9 +48,9 @@ export default function Partners() {
           </p>
           <a
             href="#corporate"
-            className="inline-flex items-center gap-3 px-8 py-3 border border-white/15 text-white font-sans text-xs font-semibold uppercase tracking-[0.15em] hover:bg-white hover:text-black transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-3 bg-white text-black font-display text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:bg-coral-500 hover:text-white"
           >
-            View Partnership Packages
+            Partnership Packages
           </a>
         </SectionReveal>
       </div>

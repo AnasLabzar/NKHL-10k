@@ -14,7 +14,7 @@ export default function RouteMapSection() {
                     <span className="inline-block text-coral-500 font-mono text-xs tracking-[0.2em] uppercase mb-4 px-3 py-1 rounded-full border border-coral-500/20 bg-coral-500/5">
                         The Course
                     </span>
-                    <h2 className="font-serif text-5xl md:text-6xl text-white mb-6 tracking-tight">Interactive Route Map</h2>
+                    <h2 className="font-display text-5xl md:text-6xl text-white mb-6 tracking-tighter uppercase leading-[0.9]">Interactive <br/> Route Map</h2>
                     <p className="text-gray-400 font-sans text-lg md:text-xl font-light">
                         Explore the challenging 10K circuit spanning through the historic palm groves.
                     </p>

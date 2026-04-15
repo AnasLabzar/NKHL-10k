@@ -37,7 +37,7 @@ const checkpoints = [
 ];
 
 const MAP_STYLE = "mapbox://styles/mapbox/dark-v11";
-const MAPBOX_TOKEN = "pk.eyJ1IjoiYW5hc2xhYnphciIsImEiOiJja3ZpMDNoYXY4N2Y4MnVzN3N2c2JnejUxIn0.riPAo4w4ulOx6p3cG06qFQ";
+const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
 
 export default function MapContainer() {
     const mapRef = useRef<MapRef>(null);

@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import SectionReveal from "../ui/SectionReveal";
 import GlassCard from "../ui/GlassCard";
 
@@ -15,11 +16,11 @@ export default function AthleteKit() {
                         <span className="inline-block text-gold-400 font-mono text-xs tracking-[0.2em] uppercase mb-6 px-3 py-1 rounded-full border border-gold-400/20 bg-gold-400/5">
                             Premium Gear
                         </span>
-                        <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-8 tracking-tight leading-tight">
+                        <h2 className="font-display text-5xl md:text-6xl lg:text-7xl text-white mb-8 tracking-tighter uppercase leading-[0.9]">
                             The Obsidian <br/> Kit
                         </h2>
-                        <p className="text-gray-400 font-sans text-lg md:text-xl mb-12 leading-relaxed font-light">
-                            Every participant receives our signature race kit. Crafted with cutting-edge breathable materials and designed for high performance in the Moroccan climate, it sets a new standard for race day apparel.
+                        <p className="text-gray-400 font-sans text-lg md:text-xl mb-12 leading-relaxed font-light uppercase tracking-widest opacity-70">
+                            Every participant receives our signature race kit. Crafted with cutting-edge breathable materials and designed for high performance in the Moroccan climate.
                         </p>
                         
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -53,12 +54,24 @@ export default function AthleteKit() {
                     <SectionReveal delay={0.4} yOffset={60} className="relative h-[700px] w-full rounded-[2.5rem] overflow-hidden border border-white/10 bg-obsidian-900 group shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)]">
                         <div className="absolute inset-0 bg-gradient-to-tr from-obsidian-950 via-obsidian-900 to-coral-500/10 z-10 transition-colors duration-1000 group-hover:to-coral-500/20" />
                         
-                        {/* Fake 3D render placeholder skeleton */}
-                        <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
-                            <div className="w-32 h-32 rounded-full border border-white/5 bg-white/5 backdrop-blur-md flex items-center justify-center mb-6 shadow-glass animate-float">
-                                <span className="text-white/40">3D</span>
-                            </div>
-                            <span className="text-gray-400 font-mono text-sm tracking-widest uppercase">Render Coming Soon</span>
+                        {/* Technical Scan & Image Backdrop */}
+                        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-12 text-center">
+                            <motion.div 
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                className="relative w-full h-full border border-white/10 bg-black/40 backdrop-blur-md flex flex-col items-center justify-center overflow-hidden"
+                            >
+                                <div className="absolute inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-coral-500/50 to-transparent top-1/4 animate-scan" style={{ animationDuration: '4s' }} />
+                                
+                                <span className="text-coral-500 font-mono text-[10px] uppercase tracking-[0.5em] mb-4">Tactical Prototype</span>
+                                <h3 className="font-display text-3xl text-white uppercase tracking-tighter mb-2">The 2026<br/>Obsidian Kit</h3>
+                                <p className="text-gray-500 font-sans text-[10px] uppercase tracking-widest max-w-[200px]">
+                                    Aero-optimized thermal regulation architecture.
+                                </p>
+
+                                {/* Decorative scan lines */}
+                                <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, #fff 3px, transparent 4px)', backgroundSize: '100% 4px' }} />
+                            </motion.div>
                         </div>
 
                         {/* Geometric Texture */}

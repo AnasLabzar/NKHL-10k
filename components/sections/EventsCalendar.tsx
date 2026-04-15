@@ -67,7 +67,7 @@ export default function EventsCalendar() {
               <h2 className="font-display text-6xl md:text-7xl text-white tracking-tight leading-none mb-6">
                 EVENT<br />CALENDAR
               </h2>
-              <p className="text-gray-500 font-sans text-sm font-light leading-relaxed">
+              <p className="text-gray-500 font-sans text-sm font-light leading-relaxed uppercase tracking-[0.2em] opacity-60">
                 Every milestone, precisely planned for the 2026 edition.
               </p>
             </SectionReveal>
@@ -123,10 +123,10 @@ export default function EventsCalendar() {
                           </span>
                         )}
                       </div>
-                      <p className="text-gray-500 font-sans text-sm font-light leading-relaxed group-hover:text-gray-400 transition-colors duration-300 max-w-lg">
+                      <p className="text-gray-500 font-sans text-sm font-light leading-relaxed group-hover:text-gray-300 transition-colors duration-300 max-w-lg uppercase tracking-wider opacity-80">
                         {phase.description}
                       </p>
-                      <span className="mt-4 inline-block text-[10px] font-mono text-white/20 uppercase tracking-widest">
+                      <span className="mt-4 inline-block text-[10px] font-mono text-white/20 uppercase tracking-[0.3em]">
                         {phase.detail}
                       </span>
                     </div>

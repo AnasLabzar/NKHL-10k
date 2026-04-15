@@ -20,8 +20,8 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
                     {/* Brand col */}
                     <div className="md:col-span-5">
-                        <span className="font-serif text-4xl text-white font-medium tracking-tight mb-6 block">
-                            NKHL <span className="text-coral-500">10K</span>
+                        <span className="font-display text-4xl text-white tracking-tighter mb-6 block uppercase">
+                            NKHL <span className="text-coral-500 italic">10K</span>
                         </span>
                         <p className="text-gray-500 font-sans max-w-xs mb-8 leading-relaxed font-light text-sm">
                             Beyond the Obsidian Palm. An ultra-premium endurance experience in the Marrakech Palmeraie.

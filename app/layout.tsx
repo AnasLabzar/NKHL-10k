@@ -79,6 +79,8 @@ export const metadata: Metadata = {
   },
 };
 
+import CinematicPreloader from "@/components/ui/CinematicPreloader";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -87,7 +89,10 @@ export default function RootLayout({
       lang="en"
       className={`${drukWide.variable} ${gilroy.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <CinematicPreloader />
+        {children}
+      </body>
     </html>
   );
 }
