@@ -1,4 +1,5 @@
 // components/map/MapContainer.tsx
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -171,7 +172,7 @@ export default function MapContainer() {
                             "line-blur": 1,
                             "line-dasharray": [1000, 1000],
                             "line-dashoffset": 1000 - (lineProgress * 1000)
-                        }}
+                        } as any}
                     />
                 </Source>
 
@@ -186,7 +187,7 @@ export default function MapContainer() {
                             "line-opacity": 0.25,
                             "line-dasharray": [1000, 1000],
                             "line-dashoffset": 1000 - (lineProgress * 1000)
-                        }}
+                        } as any}
                     />
                 </Source>
 
