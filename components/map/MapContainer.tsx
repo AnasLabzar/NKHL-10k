@@ -152,8 +152,11 @@ export default function MapContainer() {
                 mapStyle={MAP_STYLE}
                 mapboxAccessToken={MAPBOX_TOKEN}
                 onLoad={() => setMapLoaded(true)}
-                onStyleData={(e) => {
-                    if (e.target) e.target.resize();
+                onStyleData={() => {
+                    if (mapRef.current) {
+                        const m = mapRef.current.getMap();
+                        if (m) m.resize();
+                    }
                 }}
                 attributionControl={false}
                 interactive
