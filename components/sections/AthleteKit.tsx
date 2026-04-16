@@ -1,87 +1,123 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import SectionReveal from "../ui/SectionReveal";
-import GlassCard from "../ui/GlassCard";
+
+const KIT_ITEMS = [
+  { label: "Performance Jersey", detail: "100% Recycled Poly / Aero-Vent Mesh", badge: "Breathable" },
+  { label: "Race Bib #345", detail: "RFID Chip Integrated / Marrakech Edition", badge: "Precision" },
+  { label: "Obsidian Cap", detail: "5-Panel Structured / UV-Resistant", badge: "Premium" },
+  { label: "Elite Pass", detail: "Athlete Access / VIP Zone", badge: "Exclusive" },
+  { label: "NKHL Energy Gel", detail: "Coco Date / Citrus Kick / Coffee", badge: "Fuel" },
+  { label: "Finisher Medal", detail: "Heavy Zinc Alloy / NKHL Obsidian Motif", badge: "Trophy" },
+];
 
 export default function AthleteKit() {
-    return (
-        <section className="py-32 bg-obsidian-950 relative overflow-hidden" id="kits">
-            {/* Massive blur glowing backdrop */}
-            <div className="absolute top-[40%] left-[20%] w-[800px] h-[800px] bg-coral-500/10 rounded-full blur-[150px] -translate-x-1/2 -translate-y-1/2 pointer-events-none mix-blend-screen" />
+  return (
+    <section className="py-32 md:py-48 bg-obsidian-950 relative overflow-hidden" id="kits">
+      {/* Ambient glow */}
+      <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-coral-500/8 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        {/* Header */}
+        <SectionReveal className="mb-20 md:mb-32">
+          <span className="block text-gold-400 font-mono text-[10px] tracking-[0.3em] uppercase mb-4">Athlete Kit</span>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <h2 className="font-display text-[clamp(3rem,8vw,6rem)] text-white tracking-tight leading-none uppercase">
+              The Obsidian<br /><span className="text-white/20">Kit</span>
+            </h2>
+            <p className="text-gray-600 font-sans text-xs max-w-xs tracking-widest uppercase leading-relaxed">
+              Every item engineered for the Moroccan climate and the NKHL standard.
+            </p>
+          </div>
+        </SectionReveal>
+
+        {/* Main Grid — Apple Product Page Style */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/[0.06]">
+          {/* Left: Large Product Visual */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+            className="relative bg-obsidian-950 min-h-[500px] lg:min-h-[700px] flex items-center justify-center overflow-hidden group"
+          >
+            {/* Scan line */}
+            <div className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-coral-500/40 to-transparent animate-scan" style={{ animationDuration: "4s" }} />
             
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-20 items-center">
-                    <SectionReveal yOffset={40}>
-                        <span className="inline-block text-gold-400 font-mono text-xs tracking-[0.2em] uppercase mb-6 px-3 py-1 rounded-full border border-gold-400/20 bg-gold-400/5">
-                            Premium Gear
-                        </span>
-                        <h2 className="font-display text-5xl md:text-6xl lg:text-7xl text-white mb-8 tracking-tighter uppercase leading-[0.9]">
-                            The Obsidian <br/> Kit
-                        </h2>
-                        <p className="text-gray-400 font-sans text-lg md:text-xl mb-12 leading-relaxed font-light uppercase tracking-widest opacity-70">
-                            Every participant receives our signature race kit. Crafted with cutting-edge breathable materials and designed for high performance in the Moroccan climate.
-                        </p>
-                        
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <SectionReveal delay={0.1}>
-                                <GlassCard glowColor="coral" className="h-full">
-                                    <h4 className="text-white font-sans text-lg font-medium mb-3">Performance Jersey</h4>
-                                    <p className="text-sm text-gray-400 font-light leading-relaxed">Moisture-wicking, UV-resistant fabric with gold accents.</p>
-                                </GlassCard>
-                            </SectionReveal>
-                            <SectionReveal delay={0.2}>
-                                <GlassCard glowColor="gold" className="h-full">
-                                    <h4 className="text-white font-sans text-lg font-medium mb-3">Finisher Medal</h4>
-                                    <p className="text-sm text-gray-400 font-light leading-relaxed">Exclusive obsidian-inspired design forged from heavy metal.</p>
-                                </GlassCard>
-                            </SectionReveal>
-                            <SectionReveal delay={0.3}>
-                                <GlassCard glowColor="cyan" className="h-full">
-                                    <h4 className="text-white font-sans text-lg font-medium mb-3">RFID Bib</h4>
-                                    <p className="text-sm text-gray-400 font-light leading-relaxed">Precision timing chip integrated cleanly into aesthetic bib.</p>
-                                </GlassCard>
-                            </SectionReveal>
-                            <SectionReveal delay={0.4}>
-                                <GlassCard glowColor="none" className="h-full">
-                                    <h4 className="text-white font-sans text-lg font-medium mb-3">VIP Gift</h4>
-                                    <p className="text-sm text-gray-400 font-light leading-relaxed">A mysterious premium sponsor gift included in your pack.</p>
-                                </GlassCard>
-                            </SectionReveal>
-                        </div>
-                    </SectionReveal>
-                    
-                    <SectionReveal delay={0.4} yOffset={60} className="relative h-[700px] w-full rounded-[2.5rem] overflow-hidden border border-white/10 bg-obsidian-900 group shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)]">
-                        <div className="absolute inset-0 bg-gradient-to-tr from-obsidian-950 via-obsidian-900 to-coral-500/10 z-10 transition-colors duration-1000 group-hover:to-coral-500/20" />
-                        
-                        {/* Technical Scan & Image Backdrop */}
-                        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-12 text-center">
-                            <motion.div 
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                className="relative w-full h-full border border-white/10 bg-black/40 backdrop-blur-md flex flex-col items-center justify-center overflow-hidden"
-                            >
-                                <div className="absolute inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-coral-500/50 to-transparent top-1/4 animate-scan" style={{ animationDuration: '4s' }} />
-                                
-                                <span className="text-coral-500 font-mono text-[10px] uppercase tracking-[0.5em] mb-4">Tactical Prototype</span>
-                                <h3 className="font-display text-3xl text-white uppercase tracking-tighter mb-2">The 2026<br/>Obsidian Kit</h3>
-                                <p className="text-gray-500 font-sans text-[10px] uppercase tracking-widest max-w-[200px]">
-                                    Aero-optimized thermal regulation architecture.
-                                </p>
-
-                                {/* Decorative scan lines */}
-                                <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, #fff 3px, transparent 4px)', backgroundSize: '100% 4px' }} />
-                            </motion.div>
-                        </div>
-
-                        {/* Geometric Texture */}
-                        <div className="absolute inset-0 opacity-[0.03] z-0 mix-blend-overlay" />
-                        
-                        {/* Dynamic Sweep Light */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-[150%] skew-x-[-30deg] group-hover:animate-draw-line" />
-                    </SectionReveal>
+            {/* Product image or premium placeholder */}
+            <div className="relative w-full h-full">
+              <Image
+                src="/assets/nkhl-kit.png"
+                alt="NKHL Obsidian Kit"
+                fill
+                className="object-contain p-12 drop-shadow-2xl transition-transform duration-1000 group-hover:scale-[1.03]"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+              />
+              {/* Fallback tactical display if no image */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-12">
+                <div className="border border-white/5 w-full h-full flex flex-col items-center justify-center gap-4">
+                  <span className="font-mono text-[9px] text-coral-500/50 tracking-[0.4em] uppercase">Obsidian Edition</span>
+                  <div className="font-display text-6xl text-white/10 uppercase tracking-tight">Kit<br />2026</div>
+                  <div className="w-16 h-px bg-coral-500/20" />
+                  <span className="font-mono text-[8px] text-white/10 uppercase tracking-widest">NKHL · Marrakech · Palmeraie</span>
                 </div>
+              </div>
             </div>
-        </section>
-    );
+
+            {/* Corner labels */}
+            <div className="absolute top-6 left-6 font-mono text-[8px] text-white/15 uppercase tracking-[0.3em]">NKHL 10K</div>
+            <div className="absolute bottom-6 right-6 font-mono text-[8px] text-white/15 uppercase tracking-[0.3em]">Edition 2026</div>
+          </motion.div>
+
+          {/* Right: Item List */}
+          <div className="bg-obsidian-950 divide-y divide-white/[0.04]">
+            {KIT_ITEMS.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                viewport={{ once: true }}
+                className="group flex items-center justify-between px-8 py-6 hover:bg-white/[0.02] transition-all duration-300 cursor-default"
+              >
+                <div className="flex items-center gap-5">
+                  <span className="font-mono text-[9px] text-white/15">{String(i + 1).padStart(2, "0")}</span>
+                  <div>
+                    <p className="font-sans text-sm font-medium text-white/80 group-hover:text-white transition-colors duration-300">{item.label}</p>
+                    <p className="font-mono text-[9px] text-gray-600 uppercase tracking-wide mt-0.5">{item.detail}</p>
+                  </div>
+                </div>
+                <span className="hidden md:block px-2.5 py-1 text-[8px] font-mono uppercase tracking-widest text-white/20 border border-white/8 group-hover:text-coral-400 group-hover:border-coral-500/20 transition-all duration-300">
+                  {item.badge}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Disclaimer row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="mt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 py-6 border-t border-white/5"
+        >
+          <p className="text-gray-700 font-sans text-[9px] leading-relaxed max-w-lg tracking-wide uppercase">
+            * Kit contents subject to final sponsor confirmation. Items shown are for illustration purposes and may vary from final delivery. NKHL guarantees equivalent quality and performance standards for all registered athletes.
+          </p>
+          <motion.a
+            href="#register"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            className="flex-shrink-0 inline-flex items-center gap-3 border border-white/10 text-white/60 font-mono text-[9px] uppercase tracking-widest px-6 py-3 hover:border-coral-500/30 hover:text-coral-400 transition-all duration-300"
+          >
+            Claim Your Kit →
+          </motion.a>
+        </motion.div>
+      </div>
+    </section>
+  );
 }

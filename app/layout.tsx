@@ -89,9 +89,15 @@ export default function RootLayout({
       lang="en"
       className={`${drukWide.variable} ${gilroy.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-obsidian-950 text-white selection:bg-coral-500/30">
         <CinematicPreloader />
         {children}
+        
+        {/* NKHL+ Premium App Frame Overlay */}
+        <div className="pointer-events-none fixed inset-0 z-[90] p-1.5 md:p-3">
+            <div className="w-full h-full rounded-[24px] md:rounded-[32px] border-[1.5px] border-gold-500/20 shadow-[inset_0_0_60px_rgba(251,191,36,0.03)]" />
+        </div>
+        <div className="pointer-events-none fixed inset-0 z-[89] border-[6px] md:border-[12px] border-obsidian-950" />
       </body>
     </html>
   );

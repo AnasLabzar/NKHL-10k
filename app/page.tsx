@@ -14,6 +14,8 @@ import RaceBentoGrid from "@/components/sections/RaceBentoGrid";
 import CinematicGallery from "@/components/sections/CinematicGallery";
 import JoinTheElite from "@/components/sections/JoinTheElite";
 
+import DynamicScrollData from "@/components/sections/DynamicScrollData";
+
 export default function Home() {
   return (
     <div className="bg-black min-h-screen font-sans text-white">
@@ -37,6 +39,9 @@ export default function Home() {
 
         {/* 4 · Events calendar (timeline of phases) */}
         <EventsCalendar />
+
+        {/* 4.5 · Dynamic Scrolling Data / Performance metrics */}
+        <DynamicScrollData />
 
         {/* 5 · Race day experience timeline */}
         <ExperienceTimeline />
